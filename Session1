@@ -1,0 +1,72 @@
+-- ===========================
+-- SESSION 1: Database Introduction & SQL Basics
+-- ===========================
+
+-- Question 1:
+-- Install MySQL or PostgreSQL on your system and create a new database named 'music_streaming_app'.
+
+CREATE DATABASE music_streaming_app;
+
+USE music_streaming_app;
+
+
+-- Question 2:
+-- Inside the 'music_streaming_app' database, create a table called 'playlists'
+-- with columns: playlist_id (integer, primary key), name (varchar),
+-- and created_by (varchar).
+
+CREATE TABLE playlists (
+    playlist_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    created_by VARCHAR(100)
+);
+
+
+-- Question 3:
+-- Insert three sample rows into the 'playlists' table representing
+-- 'Bollywood Hits', 'Chill Vibes', and 'Workout Mix',
+-- each created by a different user.
+
+INSERT INTO playlists (playlist_id, name, created_by)
+VALUES
+(1, 'Bollywood Hits', 'Amit'),
+(2, 'Chill Vibes', 'Priya'),
+(3, 'Workout Mix', 'Rahul');
+
+
+-- Question 4:
+-- Write an SQL SELECT query to display all playlists created
+-- by the user 'Amit' from the 'playlists' table.
+
+SELECT *
+FROM playlists
+WHERE created_by = 'Amit';
+
+
+
+Question 5:
+Explain the difference between a table, a row, and a column in SQL
+using an example from a food delivery app like Zomato.
+
+Answer:
+
+1. Table:
+A table is a collection of related data stored in rows and columns.
+For example, in a food delivery app like Zomato, a table named
+"Restaurants" stores restaurant information.
+
+2. Row:
+A row represents a single record in a table.
+Example:
+Restaurant_ID = 101
+Name = 'Spice Garden'
+City = 'Surat'
+Rating = 4.5
+
+This complete restaurant information forms one row.
+
+3. Column:
+A column represents a specific attribute or field of data.
+Example:
+Restaurant_ID, Name, City, and Rating are columns in the
+"Restaurants" table.
