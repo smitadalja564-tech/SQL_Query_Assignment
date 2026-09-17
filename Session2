@@ -1,1 +1,81 @@
+-- ==================================================
+-- SESSION 2 : Database Setup + CREATE TABLE
+-- ==================================================
 
+-- Question 1:
+-- Install MySQL Community Server or SQLite on your system and verify the installation by connecting to the database.
+
+-- Answer:
+-- MySQL Community Server installed successfully and verified by connecting to the database server.
+
+
+-- Question 2:
+-- Create a new database named 'foodie_app' to simulate a Zomato-style backend.
+
+CREATE DATABASE foodie_app;
+
+USE foodie_app;
+
+
+-- Question 3:
+-- Write a CREATE TABLE statement to define a 'restaurants' table in the
+-- 'foodie_app' database with the following columns:
+-- id (integer, primary key),
+-- name (varchar, max 100),
+-- cuisine (varchar, max 50),
+-- rating (decimal, e.g., 4.5),
+-- location (varchar, max 100)
+
+CREATE TABLE restaurants (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    cuisine VARCHAR(50),
+    rating DECIMAL(2,1),
+    location VARCHAR(100)
+);
+
+
+-- Question 4:
+-- Design and create a 'users' table for a Flipkart-style app with columns:
+-- user_id (primary key), username, email, phone_number, and created_at.
+-- Use appropriate data types and constraints.
+
+CREATE TABLE users (
+    user_id INT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    phone_number VARCHAR(15) UNIQUE NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- Question 5:
+-- Intentionally create an incorrect CREATE TABLE statement,
+-- identify the error, and then fix it.
+
+-- Incorrect Statement
+
+CREATE TABLE sample_table (
+    id INT PRIMARY KEY
+    name VARCHAR(50)
+);
+
+-- Error:
+-- A comma is missing after 'id INT PRIMARY KEY'
+
+
+-- Corrected Statement
+
+CREATE TABLE sample_table (
+    id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+
+-- ==================================================
+-- Explanation for Question 5
+-- ==================================================
+
+/*
+The first CREATE TABLE statement generates an error because
+a comma is required to separate column 
